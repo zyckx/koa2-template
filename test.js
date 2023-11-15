@@ -1,5 +1,5 @@
-const defaultConfig=require('./config/default.js')
+const dbConfig=require('./config/dbConfig.js')
 
-const test={...defaultConfig.database,connectionLimit:10}
+const test={...dbConfig.development,connectionLimit:10}
 
 console.log(test);

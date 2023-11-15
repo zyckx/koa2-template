@@ -1,14 +1,14 @@
 const { Sequelize, Model } = require("sequelize");
-const defaultConfig = require("../config/default.js");
+const dbConfig = require("../config/dbConfig.js");
 
 // 方法 3: 分别传递参数 (其它数据库)
 const sequelize = new Sequelize(
-	defaultConfig.database.database,
-	defaultConfig.database.user,
-	defaultConfig.database.password,
+	dbConfig.database.database,
+	dbConfig.database.user,
+	dbConfig.database.password,
 	{
-		host: defaultConfig.database.host,
-		dialect: defaultConfig.database.type, // 数据库类型，这里是mysql
+		host: dbConfig.database.host,
+		dialect: dbConfig.database.type, // 数据库类型，这里是mysql
 		pool: {
 			max: 5, // 连接池中最大连接数量
 			min: 0, // 连接池中最小连接数量
